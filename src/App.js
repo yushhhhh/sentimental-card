@@ -11,11 +11,11 @@ function App() {
       <BrowserRouter>
         <div className='App'>
           <Header />
-          <Link to='/'>Main</Link>
+          <Link to='/'>Home</Link>
           <Link to='./Select'>Select</Link>
         </div>
         <Routes>
-          <Route path='/Main' element={<Main />} />
+          <Route path='/' element={<Main />} />
           <Route path='/Select' element={<Select />} />
         </Routes>
       </BrowserRouter>
