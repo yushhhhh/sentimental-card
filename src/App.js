@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import Main from './Main';
 //import Header from './Header';
@@ -7,7 +6,6 @@ import Select from './Select';
 import './scss/Common.scss';
 
 function App() {
-  
   return (
     <>
       <BrowserRouter>
