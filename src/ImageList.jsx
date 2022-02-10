@@ -22,7 +22,9 @@ const ImageList = () => {
   const animals = ['풍경', '꽃', '하늘', '별', '패션', '나무', '고양이', '강아지'];
   const animalsList = animals.map((name, index) => (
     <li className='item' onClick={() => HandleClick(name, index)}>
-      {name}
+      <a href='#none' className='inner'>
+        {name}
+      </a>
     </li>
   ));
   const pixbayKey = '24070790-2b3f6a587f470abbf40d40b1f'; // API KEY
@@ -31,6 +33,7 @@ const ImageList = () => {
 
   const HandleClick = (item, idx) => {
     console.log(item);
+
     getImages(`https://pixabay.com/api/?key=${pixbayKey}&q=${item}&image_type=photo&per_page=${limit}`).then((res) => {
       setImages(res.data.hits);
     });

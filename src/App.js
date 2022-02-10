@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import Main from './Main';
-import Header from './Header';
+//import Header from './Header';
 import Select from './Select';
 import './scss/Common.scss';
 
@@ -10,11 +10,26 @@ function App() {
     <>
       <BrowserRouter>
         <div className='App'>
-          <Header />
-          <nav className='nav'>
-            <Link to='/'>Home</Link>
-            <Link to='./Select'>Make Card</Link>
-          </nav>
+          <header className='header'>
+            <div>
+              <img src='assets/images/main/logo.png' />
+            </div>
+            <nav className='nav'>
+              <ul className='nav-list'>
+                <li className='item'>
+                  <Link className='link' to='/'>
+                    Home
+                  </Link>
+                </li>
+                <li className='item'>
+                  <Link className='link' to='./Select'>
+                    Make Card
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </header>
+
           <Routes>
             <Route path='/' element={<Main />} />
             <Route path='/Select' element={<Select />} />

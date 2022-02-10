@@ -59,6 +59,8 @@
   text-align: center;
   background-color: #bfeef2;
   padding: 40px 0;
+  // position: sticky;
+  // top: 150px;
 }
 .img-wrap {
   width: 100%;
@@ -74,6 +76,10 @@
   .item {
     padding: 10px 0;
     .inner {
+      font-size: 18px;
+      color: #444;
+      // color: #979797;
+      cursor: pointer;
     }
   }
 }
@@ -93,6 +99,6 @@
   .inner {
   }
   .img-bx {
-    @include img-to-bg(percentage(168/300));
+    @include img-to-bg(100%);
   }
 }
