@@ -19,8 +19,12 @@ const getImages = async (url) => await axios.get(url);
 const ImageList = () => {
   const [searchValue, setSearchValue] = useState('풍경');
   const [images, setImages] = useState([]);
-  const animals = ['풍경', '사랑', '이별', '시간', '희망', '노력'];
-  const animalsList = animals.map((name, index) => <li onClick={() => HandleClick(name, index)}>{name}</li>);
+  const animals = ['풍경', '꽃', '하늘', '별', '패션', '나무', '고양이', '강아지'];
+  const animalsList = animals.map((name, index) => (
+    <li className='item' onClick={() => HandleClick(name, index)}>
+      {name}
+    </li>
+  ));
   const pixbayKey = '24070790-2b3f6a587f470abbf40d40b1f'; // API KEY
   const search = animals[0]; // 검색어
   const limit = 10;
@@ -40,14 +44,18 @@ const ImageList = () => {
 
   return (
     <div>
-      <div>
+      <div className='category-list'>
         <ul>{animalsList}</ul>
       </div>
-      {images.map((item) => (
-        <div>
-          <img src={item.webformatURL} alt={item.webformatURL} />
-        </div>
-      ))}
+      <div className='img-list'>
+        {images.map((item) => (
+          <div className='item'>
+            <div className='inner'>
+              <img src={item.webformatURL} alt={item.webformatURL} />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
