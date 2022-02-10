@@ -1,0 +1,17 @@
+.main-slider {
+  position: relative;
+  .swiper {
+    &-container {
+    }
+    &-pagination {
+      // position: relative;
+      bottom: -30px;
+    }
+    &-button {
+      &-prev {
+      }
+      &-next {
+      }
+    }
+  }
+}

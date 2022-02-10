@@ -27,7 +27,7 @@ const ImageList = () => {
   ));
   const pixbayKey = '24070790-2b3f6a587f470abbf40d40b1f'; // API KEY
   const search = animals[0]; // 검색어
-  const limit = 10;
+  const limit = 40;
 
   const HandleClick = (item, idx) => {
     console.log(item);
@@ -43,18 +43,22 @@ const ImageList = () => {
   }, []);
 
   return (
-    <div>
-      <div className='category-list'>
-        <ul>{animalsList}</ul>
+    <div className='img-container'>
+      <div className='category-wrap'>
+        <ul className='category-list'>{animalsList}</ul>
       </div>
-      <div className='img-list'>
-        {images.map((item) => (
-          <div className='item'>
-            <div className='inner'>
-              <img src={item.webformatURL} alt={item.webformatURL} />
+      <div className='img-wrap'>
+        <div className='img-list'>
+          {images.map((item) => (
+            <div className='item'>
+              <div className='inner'>
+                <div className='img-bx'>
+                  <img src={item.webformatURL} alt={item.webformatURL} />
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

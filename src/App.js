@@ -11,13 +11,15 @@ function App() {
       <BrowserRouter>
         <div className='App'>
           <Header />
-          <Link to='/'>Home</Link>
-          <Link to='./Select'>Select</Link>
+          <nav className='nav'>
+            <Link to='/'>Home</Link>
+            <Link to='./Select'>Make Card</Link>
+          </nav>
+          <Routes>
+            <Route path='/' element={<Main />} />
+            <Route path='/Select' element={<Select />} />
+          </Routes>
         </div>
-        <Routes>
-          <Route path='/' element={<Main />} />
-          <Route path='/Select' element={<Select />} />
-        </Routes>
       </BrowserRouter>
     </>
   );

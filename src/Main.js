@@ -11,12 +11,23 @@ class Main extends Component {
   render() {
     return (
       <>
-        <div>
+        <div className='main-slider'>
           <Swiper className='banner' spaceBetween={50} slidesPerView={1} navigation pagination={{ clickable: true }}>
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
+            <SwiperSlide>
+              <div className='img-bx'>
+                <img src='assets/images/main/slide1.jpg' />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='img-bx'>
+                <img src='assets/images/main/slide2.jpg' />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='img-bx'>
+                <img src='assets/images/main/slide3.jpg' />
+              </div>
+            </SwiperSlide>
           </Swiper>
         </div>
       </>
