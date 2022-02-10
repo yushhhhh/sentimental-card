@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import Modal from './Modal';      
 
 const ImageListWrapper = styled.div`
   width: 100%;
@@ -45,6 +46,14 @@ const ImageList = () => {
     });
   }, []);
 
+  const [modalVisible, setModalvisible] = useState(false)
+  const openModal = ()=>{
+  setModalvisible(true)
+  }
+  const closeModal = ()=>{
+  setModalvisible(false)
+  }
+
   return (
     <div className='img-container'>
       <div className='category-wrap'>
@@ -58,6 +67,9 @@ const ImageList = () => {
                 <div className='img-bx'>
                   <img src={item.webformatURL} alt={item.webformatURL} />
                 </div>
+                {modalVisible && <Modal 
+                  visible={modalVisible} closable={true} maskCloseable={true} onClose={closeModal}>
+                </Modal>}
               </div>
             </div>
           ))}
